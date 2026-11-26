@@ -1,0 +1,1 @@
+{"order": 77, "seed_id": 4, "radius": 13, "budget": 200000, "allowed": 5666, "clauses": 129536, "lazy_triples": 0, "proof_lines": 304117, "status": "unsat", "restarts": 294, "conflicts": 8791, "decisions": 29515, "propagations": 35122914}
