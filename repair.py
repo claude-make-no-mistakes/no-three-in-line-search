@@ -12,10 +12,12 @@ from deficits import prune
 from grid import blockers, coordinates, crops, point_id, triples, validate
 
 
-def encode(n, seed, radius, target, conflicts, use_pruning=False):
+def encode(n, seed, radius, target, conflicts, use_pruning=False, allowed_cells=None):
     occupied = set(seed)
     allowed = occupied | {(x, y) for x in range(n) for y in range(n)
                           if len(conflicts.get((x, y), ())) <= radius}
+    if allowed_cells is not None:
+        allowed = occupied | (allowed & allowed_cells)
     rounds = []
     if use_pruning:
         if target != 2*n:
